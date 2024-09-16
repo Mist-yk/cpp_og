@@ -67,4 +67,24 @@ void explainPQ(){
         
         auto it = st.upper_bound(3);
     }
+
+//multiset
+void explainMultiSet(){
+    //everything is same as set
+    //only stores duplicate elements also
+    
+    muyltiset<int>ms;
+    ms.insert(1);// {1}
+    ms.insert(1);//{1,1}
+    
+    ms.erase(1); //all 1's erased
+    
+    int cnt = ms.count(1);
+    
+    //only a single 1 erased
+    ms.erase(ms.find(1));
+    
+    ms.erase(ms.find(1), ms.find(1)+2);
+    
+    //rest all function same as set
 }
