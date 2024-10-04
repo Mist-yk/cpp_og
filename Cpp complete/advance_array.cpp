@@ -137,3 +137,79 @@
  //        }
  //        return nums;
  //    }
+
+//union of two array brute force approcah
+//  vector<int> findUnion(int arr1[], int arr2[], int n, int m)
+//     {
+//         set<int>st;
+//         for(int i=0; i<n; i++){
+//             st.insert(arr1[i]);
+//         }
+//         for(int i=0; i<m; i++){
+//             st.insert(arr2[i]);
+//         }
+//         vector<int>temp;
+//         for(auto it : st){
+//             temp.push_back(it);
+//         }
+//         return temp;
+//     }
+
+// //optimal solution o(n1+n2)      
+// #include<bits/stdc++.h>
+
+// vector <int> sortedArray(vector<int>arr1 ,vector<int>arr2){
+//     int n =arr1.size();
+//     int m =arr2.size();
+//     int i=0;
+//     intj=0;
+//     vector<int> unionArr;
+//     while(i<n && j<m){
+//         if(arr1[i] <= arr2[j]){ //push element of arr1 if it is                           smaller then arr2
+//             if(unionArr.size() == 0 || unionArr.back != arr1[i]){
+//                 unionArr.push_back(arr1[i]);
+//             }//union.back checks prev element 
+//             i++;
+//         }
+//         else{
+//              if(unionArr.size() == 0 || unionArr.back != arr2[j]){
+//                 unionArr.push_back(arr2[j]);//push element of arr2                      if it is smaller then arr1
+//             }
+//             j++;
+//         }
+//     }
+//     while(j<arr2){
+//          if(unionArr.size() == 0 || unionArr != arr2[j]){
+//                 unionArr.push_back(arr2[j]);
+//             }//if arr2 is bigger than arr1
+//             j++;
+//     }
+//     while(i<arr1){
+//         if(unionArr.size() == 0 || unionArr != arr1[i]){
+//                 unionArr.push_back(arr1[i]);
+//             }//if arr1 is bigger than arr2
+//             i++;
+//     }
+//     return unionArr;
+// }
+
+// //intersection of two array
+// vector<int> findArrayIntersection(vector<int>&a,vector<int>&b,int n,int m){
+//     int i=0;
+//     int j=0;
+//     vector<int>ans;
+//     while(i<n && j<m){
+//         if(a[i] < b[j]){//if any element if b is smaller than a means it has no partner and b shoul move on
+//             i++;
+//         }
+//         else if(b[j] < a[i]){
+//             j++;  //if any element if b is smaller than a means it has no partner and b shoul move on
+//         }
+//         else {
+//             ans.push_back(a[i])
+//             i++;
+//             j++; //if a==b they can be in a realtionship and both move forward
+//         }
+//     }
+//     return ans;
+// }
