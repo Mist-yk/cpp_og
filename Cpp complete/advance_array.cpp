@@ -320,3 +320,146 @@
 //     cout << "The maximum subarray sum is: " << maxSum << endl;
 //     return 0;
 // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Next permutation
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// vector<int> nextGreaterPermutation(vector<int> &A) {
+//     int n = A.size(); // size of the array.
+
+//     // Step 1: Find the break point:
+//     int ind = -1; // break point
+//     for (int i = n - 2; i >= 0; i--) {
+//         if (A[i] < A[i + 1]) {
+//             // index i is the break point
+//             ind = i;
+//             break;
+//         }
+//     }
+
+//     // If break point does not exist:
+//     if (ind == -1) {
+//         // reverse the whole array:
+//         reverse(A.begin(), A.end());
+//         return A;
+//     }
+
+//     // Step 2: Find the next greater element
+//     //         and swap it with arr[ind]:
+
+//     for (int i = n - 1; i > ind; i--) {
+//         if (A[i] > A[ind]) {
+//             swap(A[i], A[ind]);
+//             break;
+//         }
+//     }
+
+//     // Step 3: reverse the right half:
+//     reverse(A.begin() + ind + 1, A.end());
+
+//     return A;
+// }
+
+// int main()
+// {
+//     vector<int> A = {2, 1, 5, 4, 3, 0, 0};
+//     vector<int> ans = nextGreaterPermutation(A);
+
+//     cout << "The next permutation is: [";
+//     for (auto it : ans) {
+//         cout << it << " ";
+//     }
+//     cout << "]n";
+//     return 0;
+// }
+
+
+
+
+//Rearrange in altrrnative positive and negative
+// #include<bits/stdc++.h>
+// using namespace std;
+
+//   vector<int> RearrangebySign(vector<int>A){
+    
+//   int n = A.size();
+  
+//   // Define array for storing the ans separately.
+//   vector<int> ans(n,0);
+  
+//   // positive elements start from 0 and negative from 1.
+//   int posIndex = 0, negIndex = 1;
+//   for(int i = 0;i<n;i++){
+      
+//       // Fill negative elements in odd indices and inc by 2.
+//       if(A[i]<0){
+//           ans[negIndex] = A[i];
+//           negIndex+=2;
+//       }
+      
+//       // Fill positive elements in even indices and inc by 2.
+//       else{
+//           ans[posIndex] = A[i];
+//           posIndex+=2;
+//       }
+//   }
+  
+//   return ans;
+    
+// }
+
+// int main() {
+    
+//   // Array Initialisation.
+  
+//   vector<int> A = {1,2,-4,-5};
+
+//   vector<int> ans = RearrangebySign(A);
+  
+//   for (int i = 0; i < ans.size(); i++) {
+//     cout << ans[i] << " ";
+//   }
+
+//   return 0;
+// }
+
+
+
+
+//Stock buy and sell
+// #include<bits/stdc++.h>
+// using namespace std;
+
+// int maxProfit(vector<int>& prices) {
+    //     int mini =prices[0];
+    //     int maxprofit = 0;
+    //     int n =prices.size();
+    //     for(int i =0;i<n;i++){
+    //         int cost =prices[i] - mini;
+    //         maxprofit = max(maxprofit , cost);
+    //         mini = min(mini , prices[i]);
+    //     }
+    //     return maxprofit;
+    // }
+
+// int main() {
+//     vector<int> arr = {7,1,5,3,6,4};
+//     int maxPro = maxprofit(arr);
+//     cout << "Max profit is: " << maxprofit << endl;
+// }
